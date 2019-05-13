@@ -9,14 +9,18 @@ class DockingStation
 
   def release_bike
     if @bike_count < 1
-      raise "No Bikes available"
+      raise "No bikes available"
     else
       Bike.new
     end
   end
 
   def dock_bike
-    @bike_count += 1
+    if @bike_count == 1
+      raise "Station is full"
+    else
+      @bike_count += 1
+    end
   end
 
 end
