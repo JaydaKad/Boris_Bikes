@@ -21,4 +21,10 @@ describe DockingStation do
     station.dock_bike
     expect(station.bike_count).to eq(1)
   end
+
+  it 'raises error' do
+    dock = DockingStation.new
+    expect { dock.raise_error }.to raise_error('An error has occured')
+  end
+
 end
