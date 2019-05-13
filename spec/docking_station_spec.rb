@@ -18,7 +18,7 @@ describe DockingStation do
   it 'checks if a bike is available' do
     station = DockingStation.new
     bike = station.release_bike
-    station.dock_bike
+    station.dock_bike(bike)
     expect(station.bike_count).to eq(1)
   end
 
@@ -29,7 +29,7 @@ describe DockingStation do
 
   it 'raises error when docking station is full' do
     dock = DockingStation.new
-    expect { dock.dock_bike }.to raise_error('Station is full')
+    expect { dock.dock_bike(Bike.new) }.to raise_error('Station is full')
   end
 
 end
