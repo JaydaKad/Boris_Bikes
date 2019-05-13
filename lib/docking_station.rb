@@ -7,14 +7,12 @@ class DockingStation
     @bike_count = 0
   end
 
-  def raise_error
-    puts 'I am before the raise'
-    raise 'An error has occured'
-    puts 'I am after the raise'
-  end
-
   def release_bike
-    Bike.new
+    if @bike_count < 1
+      raise "No Bikes available"
+    else
+      Bike.new
+    end
   end
 
   def dock_bike

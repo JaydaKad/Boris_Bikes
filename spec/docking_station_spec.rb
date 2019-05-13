@@ -24,7 +24,7 @@ describe DockingStation do
 
   it 'raises error' do
     dock = DockingStation.new
-    expect { dock.raise_error }.to raise_error('An error has occured')
+    expect { dock.release_bike }.to raise_error('No Bikes available')
   end
 
 end
